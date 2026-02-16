@@ -47,16 +47,13 @@ img { max-width: 100%; display: block; }
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.82rem;
+  gap: 0;
   color: #fff;
-  font-weight: 700;
-  font-size: 1.06rem;
-  letter-spacing: 0.015em;
 }
 .logo:hover, .logo:focus-visible { color: #fff; }
 .logo-img {
-  width: 52px;
-  height: 52px;
+  width: 74px;
+  height: 74px;
   border-radius: 0.35rem;
   object-fit: contain;
 }
@@ -248,8 +245,8 @@ input, textarea {
 @media (max-width: 720px) {
   .nav-wrap { flex-direction: column; align-items: flex-start; }
   .logo-img {
-    width: 46px;
-    height: 46px;
+    width: 64px;
+    height: 64px;
   }
   .hero-content { padding: 4.2rem 0; }
 }
