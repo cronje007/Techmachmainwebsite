@@ -6,6 +6,7 @@ This file contains all follow-up actions so no placeholder/instructional text is
 Add these files into `assets/img/`:
 - `techmachlogo.png` (header logo)
 - `favicon.ico` (browser tab icon)
+- `Silocomplex.jpg` (hero background image)
 
 Recommended:
 - Logo PNG with transparent background, at least 600px wide.

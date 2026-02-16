@@ -8,9 +8,9 @@ A static website for Techmach Technology built with plain HTML, CSS, and lightwe
 - `contact.html` — Contact
 
 ## Design Direction
-- Dark-blue client-facing interface
-- Light-blue accents for navigation and key call-to-actions
-- Professional industrial layout with strong typography and clear content blocks
+- Dark-blue client-facing interface with lighter blue accents
+- Hero banner uses `assets/img/Silocomplex.jpg` with dark overlay
+- Clean corporate layout with stronger section hierarchy
 - Primary font stack prioritises **Decimal Mono**
 
 ## Project Structure
@@ -36,7 +36,7 @@ The Home page reads these image paths directly:
 - `projects/feedmilling/cover.jpg`
 - `projects/seed/cover.jpg`
 
-If these files are missing, the site falls back to `assets/img/placeholder-industrial.svg`.
+If these files are missing, the site falls back to `assets/img/project-fallback.svg`.
 
 ## Content and asset handover
 See **`WHAT_TO_DO_NEXT.md`** for the full handover checklist and exact files to provide.
