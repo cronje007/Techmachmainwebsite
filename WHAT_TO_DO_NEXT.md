@@ -4,7 +4,7 @@ This file contains all follow-up actions so no placeholder/instructional text is
 
 ## 1) Brand Assets
 Add these files into `assets/img/`:
-- `techmachlogo.png` (header logo)
+- `techmachlogo.jpeg` (header logo)
 - `favicon.ico` (browser tab icon)
 - `Silocomplex.jpg` (hero background image)
 
@@ -43,3 +43,9 @@ Review and approve final wording in:
 - `contact.html`
 
 If you want a more formal tone, send final approved copy and it can be swapped in directly.
+
+
+## 6) Background Shuffle Images
+Put your hero background images inside `backround suffle/`.
+Supported formats in the current setup: JPG, JPEG, PNG, WEBP.
+You can scroll the hero area (or use Previous/Next buttons on Home) to cycle through images.

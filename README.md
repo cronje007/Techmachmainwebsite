@@ -20,6 +20,7 @@ A static website for Techmach Technology built with plain HTML, CSS, and lightwe
 - `assets/css/main.css` — Site styles
 - `assets/js/main.js` — Interactions (active nav, section reveal, footer year, image fallback)
 - `assets/img/` — Logo, favicon, and image assets
+- `backround suffle/` — Background image shuffle folder (supports JPG/JPEG/PNG/WEBP)
 - `projects/cereal/` — Cereal project images
 - `projects/feedmilling/` — Feed milling project images
 - `projects/seed/` — Seed project images
@@ -34,6 +35,7 @@ python -m http.server 8000
 Then visit `http://localhost:8000`.
 
 ## Image Usage
+- Logo file expected: `assets/img/techmachlogo.jpeg`
 The Home page reads these image paths directly:
 - `projects/cereal/cover.jpg`
 - `projects/feedmilling/cover.jpg`
