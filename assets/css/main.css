@@ -1,10 +1,10 @@
 :root {
-  --primary: #123a63;
-  --accent: #1d8f88;
-  --text: #1e2933;
-  --muted: #5b6770;
-  --bg: #f7f9fb;
-  --border: #d9e1e8;
+  --primary: #5d687f;
+  --accent: #a1aeb9;
+  --text: #243042;
+  --muted: #4f5d72;
+  --bg: #eef2f6;
+  --border: #c2ccd6;
 }
 
 * {
@@ -47,7 +47,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(93, 104, 127, 0.94);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -61,7 +61,7 @@ img {
 }
 
 .logo {
-  color: var(--primary);
+  color: #ffffff;
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0.01em;
@@ -83,7 +83,7 @@ img {
 }
 
 .site-nav a {
-  color: var(--text);
+  color: #f3f6fa;
   padding: 0.45rem 0.65rem;
   border-radius: 0.5rem;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -92,8 +92,8 @@ img {
 .site-nav a:hover,
 .site-nav a:focus-visible,
 .site-nav a.is-active {
-  background: #dceaf8;
-  color: var(--primary);
+  background: var(--accent);
+  color: #1f2a38;
 }
 
 .section {
@@ -106,10 +106,11 @@ img {
 
 .hero {
   padding: 6.5rem 0 5rem;
-  background: linear-gradient(135deg, #ffffff 0%, #dbe9f6 100%);
+  background: linear-gradient(135deg, #c7d1da 0%, #a1aeb9 45%, #5d687f 100%);
 }
 
 .hero h1 {
+  color: #ffffff;
   font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: 1.15;
   margin: 0 0 1rem;
@@ -117,7 +118,7 @@ img {
 
 .tagline {
   font-size: clamp(1rem, 2.2vw, 1.3rem);
-  color: var(--muted);
+  color: #eaf0f7;
   max-width: 55ch;
 }
 
@@ -142,7 +143,7 @@ img {
 }
 
 .card {
-  background: #fff;
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 0.9rem;
   padding: 1.25rem;
@@ -187,7 +188,7 @@ img {
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background: #0f2f50;
+  background: #4a556c;
   color: #fff;
 }
 
@@ -271,7 +272,7 @@ img {
   border: 1px dashed var(--border);
   border-radius: 0.8rem;
   padding: 1rem;
-  color: var(--muted);
+  color: #eaf0f7;
   background: #fcfdff;
 }
 
@@ -313,8 +314,8 @@ textarea {
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 1.6rem 0;
-  color: var(--muted);
-  background: #eef4fa;
+  color: #eaf0f7;
+  background: var(--accent);
 }
 
 .reveal {
@@ -377,4 +378,15 @@ textarea {
   .hero {
     padding-top: 5.4rem;
   }
+}
+
+
+.site-footer a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.logo:hover,
+.logo:focus-visible {
+  color: #ffffff;
 }
