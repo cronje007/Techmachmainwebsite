@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Techmach Technology | Contact</title>
-    <meta name="description" content="Contact Techmach Technology for projects and enquiries." />
+    <meta name="description" content="Contact Techmach Technology for project enquiries." />
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
@@ -25,35 +25,51 @@
 
     <main>
       <section class="hero">
-        <div class="container">
-          <h1>Contact</h1>
-          <p class="tagline">Send us your requirement and we can scope the right solution.</p>
+        <div class="container hero-grid">
+          <div class="hero-panel">
+            <h1>Start a conversation with our engineering team.</h1>
+            <p class="tagline">Share your requirements and we will align scope, timeline, and delivery approach.</p>
+          </div>
+          <div class="hero-highlight">
+            <h2>Direct Contact</h2>
+            <p class="tagline">Email: <a href="mailto:Warren@techmach.co.za">Warren@techmach.co.za</a></p>
+            <p class="tagline">Phone: <a href="tel:+27117621091">011 762 1091</a></p>
+          </div>
         </div>
       </section>
 
-      <section class="section reveal">
-        <div class="container grid grid-3">
+      <section class="section surface reveal">
+        <div class="container grid" style="grid-template-columns: 1.2fr 1fr;">
           <article class="card">
-            <h2 class="section-title">Direct Contact</h2>
-            <p>Email: <a href="mailto:Warren@techmach.co.za">Warren@techmach.co.za</a></p>
-            <p>Phone: <a href="tel:+27117621091">011 762 1091</a></p>
+            <h2 class="section-title">Project Enquiry</h2>
+            <form class="form-grid" action="#" method="post">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" />
+              </div>
+              <div>
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" autocomplete="organization" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" />
+              </div>
+              <div>
+                <label for="message">Project details</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+              </div>
+              <div>
+                <button class="btn btn-primary" type="submit">Submit Enquiry</button>
+              </div>
+            </form>
           </article>
           <article class="card">
-            <h2 class="section-title">Recommended image spec</h2>
-            <ul class="checklist">
-              <li>Landscape photos (4:3 or 16:9)</li>
-              <li>1600×1200 minimum</li>
-              <li>JPG or WEBP preferred</li>
-              <li>File names like <code>cover.jpg</code>, <code>line-01.jpg</code></li>
-            </ul>
-          </article>
-          <article class="card">
-            <h2 class="section-title">Folders ready in repo</h2>
-            <ul class="checklist">
-              <li><code>projects/cereal/</code></li>
-              <li><code>projects/feedmilling/</code></li>
-              <li><code>projects/seed/</code></li>
-            </ul>
+            <h2 class="section-title">Business Focus</h2>
+            <p>
+              Techmach supports clients in cereal milling, feed milling, and seed processing with
+              design, manufacturing, and implementation support for practical operating outcomes.
+            </p>
           </article>
         </div>
       </section>
