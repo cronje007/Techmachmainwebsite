@@ -3,28 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Techmach Technology | Reference Projects</title>
-    <meta
-      name="description"
-      content="Browse Techmach Technology reference projects in feed milling, seed lines, and cereal milling."
-    />
+    <title>Techmach Technology | Projects</title>
+    <meta name="description" content="Techmach projects page." />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body data-page="projects">
     <header class="site-header">
       <div class="container nav-wrap">
-        <a href="index.html" class="logo">Techmach Technology</a>
+        <a href="index.html" class="logo">
+          <img src="assets/img/techmachlogo.png" alt="Techmach logo" class="logo-img" onerror="this.style.display='none'" />
+          <span>Techmach Technology</span>
+        </a>
         <nav class="site-nav" aria-label="Main navigation">
           <a href="index.html" data-page="home">Home</a>
           <a href="about.html" data-page="about">About</a>
-          <a href="projects.html" data-page="projects">Reference Projects</a>
-          <a href="links.html" data-page="links">Website Links</a>
+          <a href="projects.html" data-page="projects">Projects</a>
+          <a href="links.html" data-page="links">Links</a>
           <a href="contact.html" data-page="contact">Contact</a>
         </nav>
       </div>
@@ -33,24 +31,18 @@
     <main>
       <section class="hero">
         <div class="container">
-          <h1>Reference Projects</h1>
-          <p class="tagline">
-            Explore selected project categories. Add image files to each project folder and update
-            the filename list in <code>assets/js/main.js</code>.
-          </p>
+          <h1>Projects</h1>
+          <p class="tagline">Project gallery coming soon.</p>
         </div>
       </section>
 
       <section class="section reveal">
         <div class="container">
-          <h2 class="section-title">Project Categories</h2>
-          <p class="section-intro">
-            Filter projects by category. If no image files are listed yet, the gallery will show a
-            placeholder while content is being prepared.
-          </p>
-          <div id="project-filters" class="filter-row" role="tablist" aria-label="Project category filters"></div>
+          <h2 class="section-title">Reference Projects</h2>
+          <p class="section-intro">Feed Milling, Seed Lines, and Cereal Milling images can be added later.</p>
+          <div id="project-filters" class="filter-row"></div>
           <p id="project-description" class="section-intro"></p>
-          <div id="projects-gallery" class="gallery-grid" aria-live="polite"></div>
+          <div id="projects-gallery" class="gallery-grid"></div>
         </div>
       </section>
     </main>
@@ -65,8 +57,8 @@
     <footer class="site-footer">
       <div class="container">
         <p>
-          Techmach Technology &copy; <span id="year">2026</span>. Reach us at
-          <a href="mailto:sales@techmach.co.za">sales@techmach.co.za</a>.
+          Techmach Technology &copy; <span id="year">2026</span> ·
+          <a href="mailto:Warren@techmach.co.za">Warren@techmach.co.za</a> · 011 762 1091
         </p>
       </div>
     </footer>
