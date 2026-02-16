@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   setActiveNav();
   initRevealOnScroll();
   syncFooterYear();
+  initImageFallbacks();
 });
 
 function setActiveNav() {
   const page = document.body.dataset.page;
-  if (!page) return;
-  const activeLink = document.querySelector(`.site-nav a[data-page='${page}']`);
+  const activeLink = page ? document.querySelector(`.site-nav a[data-page='${page}']`) : null;
   if (activeLink) activeLink.classList.add("is-active");
 }
 
@@ -18,10 +18,9 @@ function initRevealOnScroll() {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
       });
     },
     { threshold: 0.15 }
@@ -33,5 +32,13 @@ function initRevealOnScroll() {
 function syncFooterYear() {
   document.querySelectorAll("#year").forEach((node) => {
     node.textContent = new Date().getFullYear();
+  });
+}
+
+function initImageFallbacks() {
+  document.querySelectorAll("img[data-fallback]").forEach((img) => {
+    img.addEventListener("error", () => {
+      img.src = img.dataset.fallback;
+    });
   });
 }
