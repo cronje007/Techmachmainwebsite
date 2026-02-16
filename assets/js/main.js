@@ -37,7 +37,18 @@ function syncFooterYear() {
 
 function initImageFallbacks() {
   document.querySelectorAll("img[data-fallback]").forEach((img) => {
+    const alternatives = (img.dataset.altSrcs || "")
+      .split(",")
+      .map((src) => src.trim())
+      .filter(Boolean);
+
     img.addEventListener("error", () => {
+      const nextSrc = alternatives.shift();
+      if (nextSrc) {
+        img.src = nextSrc;
+        return;
+      }
+
       img.src = img.dataset.fallback;
     });
   });
