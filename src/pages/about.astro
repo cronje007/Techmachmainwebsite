@@ -1,0 +1,16 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const about = await getEntry('pages', 'about.md');
+---
+
+<BaseLayout title="Techmach | About" description={about?.data.intro}>
+  <section class="mx-auto max-w-4xl px-6 py-16">
+    <h1 class="mb-6 text-4xl font-bold">About Techmach</h1>
+    <p class="mb-8 text-lg text-slate-700">{about?.data.intro}</p>
+    <article class="prose prose-slate max-w-none">
+      {about && <Fragment set:html={about.body} />}
+    </article>
+  </section>
+</BaseLayout>

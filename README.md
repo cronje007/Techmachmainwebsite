@@ -1,42 +1,32 @@
-# Techmach Technology Website
+# Techmach Website (Astro)
 
-A static website for Techmach Technology built with plain HTML, CSS, and lightweight JavaScript.
+Production-ready static Astro website with Tailwind CSS, Astro Content Collections, and Decap CMS.
 
-## Pages
-- `about.html` — Current holding/about page
-- `index.html` — Redirects to `about.html`
-- `contact.html` — Redirects to `about.html`
+## Stack
+- Astro + TypeScript
+- Tailwind CSS
+- Astro Content Collections
+- Decap CMS (`/admin`)
+- Netlify static deployment (`npm run build`, publish `dist`)
 
-## Design Direction
-- Dark-blue client-facing interface with lighter blue accents
-- Hero banner uses `assets/img/Silocomplex.jpg` with dark overlay
-- Clean corporate layout with stronger section hierarchy
-- Primary font stack prioritises **Decimal Mono**
-
-## Project Structure
-- `assets/css/main.css` — Site styles
-- `assets/js/main.js` — Interactions (active nav, section reveal, footer year, image fallback)
-- `assets/img/` — Logo, favicon, and image assets
-- `projects/cereal/` — Cereal project images
-- `projects/feedmilling/` — Feed milling project images
-- `projects/seed/` — Seed project images
-
-## Local Run
-Open `index.html` directly in a browser, or run:
-
+## Commands
 ```bash
-python -m http.server 8000
+npm install
+npm run dev
+npm run build
+npm run preview
 ```
 
-Then visit `http://localhost:8000`.
+## Content
+- Divisions: `src/content/divisions`
+- Projects: `src/content/projects`
+- Partners: `src/content/partners`
+- CMS editable pages: `src/content/pages`
 
-## Image Usage
-The Home page reads these image paths directly:
-- `projects/cereal/cover.jpg`
-- `projects/feedmilling/cover.jpg`
-- `projects/seed/cover.jpg`
+## CMS
+- Admin: `/admin`
+- Config: `public/admin/config.yml`
+- Media uploads: `public/uploads`
 
-If these files are missing, the site falls back to `assets/img/project-fallback.svg`.
-
-## Content and asset handover
-See **`WHAT_TO_DO_NEXT.md`** for the full handover checklist and exact files to provide.
+## Netlify
+`netlify.toml` is configured for static output.

@@ -1,0 +1,63 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: false
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: divisions
+    label: Divisions
+    folder: src/content/divisions
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: slug, label: Slug, widget: string }
+      - { name: summary, label: Summary, widget: text }
+      - { name: heroImage, label: Hero Image, widget: image }
+      - { name: services, label: Services, widget: list }
+      - { name: gallery, label: Gallery, widget: list, field: { name: image, label: Image, widget: image } }
+  - name: projects
+    label: Projects
+    folder: src/content/projects
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: slug, label: Slug, widget: string }
+      - { name: division, label: Division Slug, widget: string }
+      - { name: location, label: Location, widget: string }
+      - { name: date, label: Date, widget: datetime }
+      - { name: featuredImage, label: Featured Image, widget: image }
+      - { name: gallery, label: Gallery, widget: list, field: { name: image, label: Image, widget: image } }
+      - { name: excerpt, label: Excerpt, widget: text }
+      - { name: body, label: Body, widget: markdown }
+  - name: partners
+    label: Partners
+    folder: src/content/partners
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: category, label: Category, widget: string }
+      - { name: logo, label: Logo, widget: image }
+      - { name: website, label: Website, widget: string, required: false }
+  - name: pages
+    label: Pages
+    folder: src/content/pages
+    create: false
+    slug: '{{slug}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: heroHeadline, label: Hero Headline, widget: string, required: false }
+      - { name: heroText, label: Hero Text, widget: text, required: false }
+      - { name: ctaText, label: CTA Text, widget: string, required: false }
+      - { name: intro, label: Intro, widget: text, required: false }
+      - { name: contactEmail, label: Contact Email, widget: string, required: false }
+      - { name: contactPhone, label: Contact Phone, widget: string, required: false }
+      - { name: address, label: Address, widget: string, required: false }
+      - { name: droneImage, label: Drone Image, widget: image, required: false }
+      - { name: body, label: Body, widget: markdown, required: false }

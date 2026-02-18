@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const projects = await getCollection('projects');
+const divisions = await getCollection('divisions');
+const getDivisionSlug = (division: (typeof divisions)[number]) => division.data.slug ?? division.id.replace(/\.md$/, '');
+---
+
+<BaseLayout title="Techmach | Projects" description="Industrial project portfolio">
+  <section class="mx-auto max-w-7xl px-6 py-16">
+    <h1 class="mb-8 text-4xl font-bold">Projects</h1>
+
+    <div class="mb-8 flex flex-wrap gap-3" id="filters">
+      <button data-filter="all" class="filter-btn rounded border border-slate-300 px-4 py-2 text-sm font-medium">All</button>
+      {divisions.map((division) => (
+        <button data-filter={getDivisionSlug(division)} class="filter-btn rounded border border-slate-300 px-4 py-2 text-sm font-medium">{division.data.title}</button>
+      ))}
+    </div>
+
+    <div id="project-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => (
+        <a data-division={project.data.division} href={`/projects/${project.data.slug ?? project.id.replace(/\.md$/, '')}/`} class="project-card overflow-hidden rounded border border-slate-200 bg-white">
+          <img src={project.data.featuredImage} alt={project.data.title} class="h-48 w-full object-cover" loading="lazy" />
+          <div class="p-5">
+            <span class="mb-3 inline-block rounded bg-slate-100 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700">{project.data.division}</span>
+            <h2 class="mb-2 text-lg font-semibold">{project.data.title}</h2>
+            <p class="text-sm text-slate-600">{project.data.location}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <script>
+    const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.filter-btn'));
+    const cards = Array.from(document.querySelectorAll<HTMLAnchorElement>('.project-card'));
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        buttons.forEach((btn) => btn.classList.remove('bg-charcoal', 'text-white'));
+        button.classList.add('bg-charcoal', 'text-white');
+        cards.forEach((card) => {
+          const match = filter === 'all' || card.dataset.division === filter;
+          card.style.display = match ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+</BaseLayout>
