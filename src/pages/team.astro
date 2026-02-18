@@ -1,0 +1,38 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+
+const capabilities = [
+  {
+    title: 'Drawing Office',
+    summary: 'Mechanical and process design expertise to define reliable layouts and maintainable systems.',
+    image: '/images/team/drawing-office.svg'
+  },
+  {
+    title: 'Workshop',
+    summary: 'Fabrication and assembly facilities focused on robust, high-quality process equipment.',
+    image: '/images/team/workshop.svg'
+  },
+  {
+    title: 'Site Teams',
+    summary: 'Experienced teams delivering installation, commissioning, and support on operating sites.',
+    image: '/images/team/site-teams.svg'
+  }
+];
+---
+
+<MainLayout title="Team | Techmach">
+  <Hero
+    title="A Team Built for Delivery"
+    subtitle="Our engineers, workshop crews, and site teams work as one to deliver dependable industrial outcomes."
+    image="/images/team/drone-hero.svg"
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold">Capabilities</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      {capabilities.map((capability) => <Card {...capability} />)}
+    </div>
+  </section>
+</MainLayout>

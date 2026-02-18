@@ -1,42 +1,35 @@
-# Techmach Technology Website
+# Techmach Main Website (Astro + Tailwind)
 
-A static website for Techmach Technology built with plain HTML, CSS, and lightweight JavaScript.
+Static marketing site for Techmach built with Astro and Tailwind CSS.
 
-## Pages
-- `about.html` — Current holding/about page
-- `index.html` — Redirects to `about.html`
-- `contact.html` — Redirects to `about.html`
+## Stack
 
-## Design Direction
-- Dark-blue client-facing interface with lighter blue accents
-- Hero banner uses `assets/img/Silocomplex.jpg` with dark overlay
-- Clean corporate layout with stronger section hierarchy
-- Primary font stack prioritises **Decimal Mono**
+- Astro (TypeScript)
+- Tailwind CSS
+- Static assets in `public/images`
 
-## Project Structure
-- `assets/css/main.css` — Site styles
-- `assets/js/main.js` — Interactions (active nav, section reveal, footer year, image fallback)
-- `assets/img/` — Logo, favicon, and image assets
-- `projects/cereal/` — Cereal project images
-- `projects/feedmilling/` — Feed milling project images
-- `projects/seed/` — Seed project images
-
-## Local Run
-Open `index.html` directly in a browser, or run:
+## Run locally
 
 ```bash
-python -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then visit `http://localhost:8000`.
+## Build
 
-## Image Usage
-The Home page reads these image paths directly:
-- `projects/cereal/cover.jpg`
-- `projects/feedmilling/cover.jpg`
-- `projects/seed/cover.jpg`
+```bash
+npm run build
+```
 
-If these files are missing, the site falls back to `assets/img/project-fallback.svg`.
+Netlify configuration is included in `netlify.toml`:
 
-## Content and asset handover
-See **`WHAT_TO_DO_NEXT.md`** for the full handover checklist and exact files to provide.
+- Build command: `npm run build`
+- Publish directory: `dist`
+
+## Project structure
+
+- `src/layouts` shared page layout
+- `src/components` reusable UI blocks (hero, cards, gallery, navigation, footer)
+- `src/pages` static routes
+- `src/styles` global Tailwind imports
+- `public/images` all static image assets
