@@ -91,7 +91,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   background-image:
     linear-gradient(110deg, rgba(15, 27, 46, 0.78), rgba(31, 47, 74, 0.64)),
-    url("../img/Silocomplex.jpg");
+    url("../img/silocomplex.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
