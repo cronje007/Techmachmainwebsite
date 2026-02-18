@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection.astro';
 
 const divisions = await getCollection('divisions');
+const getDivisionSlug = (division: (typeof divisions)[number]) => division.data.slug ?? division.id.replace(/\.md$/, '');
 const projects = (await getCollection('projects')).slice(0, 3);
 const [home] = await getCollection('pages', ({ id }) => id === 'home.md');
 ---
@@ -17,7 +18,7 @@ const [home] = await getCollection('pages', ({ id }) => id === 'home.md');
     </div>
     <div class="grid gap-6 md:grid-cols-2">
       {divisions.map((division) => (
-        <a href={`/divisions/${division.data.slug}/`} class="rounded border border-slate-200 p-6 transition hover:border-accent hover:shadow-sm">
+        <a href={`/divisions/${getDivisionSlug(division)}/`} class="rounded border border-slate-200 p-6 transition hover:border-accent hover:shadow-sm">
           <h3 class="mb-3 text-xl font-semibold">{division.data.title}</h3>
           <p class="text-slate-600">{division.data.summary}</p>
         </a>
@@ -33,7 +34,7 @@ const [home] = await getCollection('pages', ({ id }) => id === 'home.md');
       </div>
       <div class="grid gap-6 md:grid-cols-3">
         {projects.map((project) => (
-          <a href={`/projects/${project.data.slug}/`} class="rounded bg-white p-5 shadow-sm">
+          <a href={`/projects/${project.data.slug ?? project.id.replace(/\.md$/, '')}/`} class="rounded bg-white p-5 shadow-sm">
             <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-accent">{project.data.location}</p>
             <h3 class="mb-3 text-lg font-semibold">{project.data.title}</h3>
             <p class="text-sm text-slate-600">{project.data.excerpt}</p>

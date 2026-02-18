@@ -5,11 +5,15 @@ import HeroSection from '../../components/HeroSection.astro';
 
 export async function getStaticPaths() {
   const divisions = await getCollection('divisions');
-  return divisions.map((division) => ({ params: { slug: division.data.slug }, props: { division } }));
+  return divisions.map((division) => ({
+    params: { slug: division.data.slug ?? division.id.replace(/\.md$/, '') },
+    props: { division }
+  }));
 }
 
 const { division } = Astro.props;
-const projects = await getCollection('projects', ({ data }) => data.division === division.data.slug);
+const divisionSlug = division.data.slug ?? division.id.replace(/\.md$/, '');
+const projects = await getCollection('projects', ({ data }) => data.division === divisionSlug);
 ---
 
 <BaseLayout title={`Techmach | ${division.data.title}`} description={division.data.summary}>
@@ -41,7 +45,7 @@ const projects = await getCollection('projects', ({ data }) => data.division ===
         <h2 class="mb-6 text-2xl font-semibold">Related Projects</h2>
         <div class="grid gap-4 md:grid-cols-3">
           {projects.map((project) => (
-            <a href={`/projects/${project.data.slug}/`} class="rounded bg-white p-5 shadow-sm">
+            <a href={`/projects/${project.data.slug ?? project.id.replace(/\.md$/, '')}/`} class="rounded bg-white p-5 shadow-sm">
               <h3 class="font-semibold">{project.data.title}</h3>
               <p class="text-sm text-slate-600">{project.data.location}</p>
             </a>

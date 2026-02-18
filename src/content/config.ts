@@ -5,7 +5,7 @@ const divisions = defineCollection({
   schema: () =>
     z.object({
       title: z.string(),
-      slug: z.string(),
+      slug: z.string().optional(),
       summary: z.string(),
       heroImage: z.string(),
       services: z.array(z.string()),
@@ -18,7 +18,7 @@ const projects = defineCollection({
   schema: () =>
     z.object({
       title: z.string(),
-      slug: z.string(),
+      slug: z.string().optional(),
       division: z.string(),
       location: z.string(),
       date: z.string(),
