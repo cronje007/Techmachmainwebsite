@@ -1,0 +1,21 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Card from '../components/Card.astro';
+
+const projects = [
+  { title: 'Milling Expansion', summary: 'Lusaka, Zambia', image: '/images/projects/project-1.svg', badge: 'Cereal Milling' },
+  { title: 'Intake & Silo Upgrade', summary: 'Harare, Zimbabwe', image: '/images/projects/project-2.svg', badge: 'Grain Handling' },
+  { title: 'Feed Pelleting Line', summary: 'Nairobi, Kenya', image: '/images/projects/project-3.svg', badge: 'Feed Milling' },
+  { title: 'Seed Cleaning Plant', summary: 'Pretoria, South Africa', image: '/images/projects/project-4.svg', badge: 'Seed Processing' }
+];
+---
+
+<MainLayout title="Projects | Techmach">
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <h1 class="text-4xl font-black">Projects</h1>
+    <p class="mt-3 text-gray-600">Recent delivery examples across Africa.</p>
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+      {projects.map((project) => <Card {...project} />)}
+    </div>
+  </section>
+</MainLayout>

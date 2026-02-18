@@ -4,12 +4,12 @@ This file contains all follow-up actions so no placeholder/instructional text is
 
 ## 1) Brand Assets
 Add these files into `assets/img/`:
-- `techmachlogo.png` (header logo)
-- `favicon.ico` (browser tab icon)
-- `Silocomplex.jpg` (hero background image)
+- `techmachlogo.svg` (header logo)
+- `favicon.svg` (browser tab icon)
+- `silocomplex.svg` (hero background image)
 
 Recommended:
-- Logo PNG with transparent background, at least 600px wide.
+- Logo SVG preferred for repository text-only assets.
 
 ## 2) Decimal Mono Font
 If you have licensed webfont files, add them into `assets/fonts/` (for example):
@@ -20,14 +20,14 @@ Then update `assets/css/main.css` `@font-face` sources to point to those files.
 
 ## 3) Project Photos
 Add your best photos here:
-- `projects/cereal/cover.jpg`
-- `projects/feedmilling/cover.jpg`
-- `projects/seed/cover.jpg`
+- `projects/cereal/cover.svg`
+- `projects/feedmilling/cover.svg`
+- `projects/seed/cover.svg`
 
 Recommended image quality:
 - 1600px+ wide
 - Landscape orientation
-- JPG or WEBP
+- SVG placeholders (or host binaries externally)
 
 ## 4) Optional Expansion (Next iteration)
 - Add a dedicated Projects page with galleries per sector.
