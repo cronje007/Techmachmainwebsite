@@ -15,16 +15,10 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: "Decimal Mono", "DM Mono", "Roboto Mono", "Consolas", monospace;
+  font-family: "Inter", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
   background: var(--surface-alt);
   line-height: 1.55;
-}
-
-@font-face {
-  font-family: "Decimal Mono";
-  src: local("Decimal Mono"), local("DecimalMono");
-  font-display: swap;
 }
 
 a { color: var(--primary); text-decoration: none; }
@@ -47,21 +41,19 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.9rem 0;
+  padding: 0.72rem 0;
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0;
   color: #fff;
-  font-weight: 700;
-  letter-spacing: 0.01em;
 }
 .logo:hover, .logo:focus-visible { color: #fff; }
 .logo-img {
-  width: 38px;
-  height: 38px;
+  width: 74px;
+  height: 74px;
   border-radius: 0.35rem;
   object-fit: contain;
 }
@@ -91,7 +83,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   background-image:
     linear-gradient(110deg, rgba(15, 27, 46, 0.78), rgba(31, 47, 74, 0.64)),
-    url("../img/Silocomplex.jpg");
+    url("../img/silocomplex.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -252,5 +244,9 @@ input, textarea {
 
 @media (max-width: 720px) {
   .nav-wrap { flex-direction: column; align-items: flex-start; }
+  .logo-img {
+    width: 64px;
+    height: 64px;
+  }
   .hero-content { padding: 4.2rem 0; }
 }
