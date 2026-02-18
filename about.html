@@ -6,7 +6,7 @@
     <title>Techmach | About</title>
     <meta
       name="description"
-      content="Techmach is currently undergoing a transformation. Contact us for any enquiries."
+      content="Techmach is a general engineering company in the Agri sector, with over 30 years of experience."
     />
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <style>
@@ -35,9 +35,10 @@
       }
 
       .brand {
-        width: 100%;
-        max-width: 600px;
-        margin-bottom: 2.5rem;
+        width: min(100%, 430px);
+        height: auto;
+        margin-bottom: 2.25rem;
+        image-rendering: auto;
       }
 
       .dash {
@@ -62,6 +63,35 @@
         margin-bottom: 0.8rem;
       }
 
+      .company-description {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        max-width: 900px;
+      }
+
+      .contact-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 0.5rem;
+      }
+
+      .contact-button {
+        display: inline-block;
+        padding: 0.7rem 1rem;
+        border: 1px solid #9dadbd;
+        border-radius: 0.45rem;
+        color: #d8e4ef;
+        text-decoration: none;
+        transition: background-color 0.15s ease, color 0.15s ease;
+      }
+
+      .contact-button:hover,
+      .contact-button:focus-visible {
+        background-color: rgba(174, 191, 208, 0.22);
+        color: #ffffff;
+      }
+
       a {
         color: #aebfd0;
       }
@@ -83,11 +113,27 @@
       <p>
         WE ARE CURRENTLY UNDERGOING A TRANSFORMATION AND APPRECIATE YOUR PATIENCE.
       </p>
-      <p>
-        FOR ANY ENQUIRIES, PLEASE CONTACT +27 11 762-1091 OR
-        <a href="mailto:juan-paul@techmach.co.za">juan-paul@techmach.co.za</a>.
+
+      <p class="company-description">
+        Techmach is a general engineering company in the Agri sector, with over 30 years of
+        experience. The company is dedicated to becoming Africa's leading engineering company,
+        specializing in cereal milling, animal feed milling, seed processing, and other related
+        fields. Techmach is supported by its young and energetic management, investment in
+        productive equipment, and skilled personnel. Techmach provides high-quality products and
+        services to the food industry, including machinery and components, turnkey projects and
+        project design. The company has made substantial investments in design and manufacturing
+        facilities to match world standards of quality and productivity.
       </p>
-      <p>THANK YOU.</p>
+
+      <p>FOR ANY ENQUIRIES, PLEASE CONTACT:</p>
+      <div class="contact-buttons">
+        <a class="contact-button" href="mailto:Warren@techmach.co.za">Warren@techmach.co.za</a>
+        <a class="contact-button" href="mailto:juan-paul@techmach.co.za"
+          >juan-paul@techmach.co.za</a
+        >
+      </div>
+
+      <p style="margin-top: 1.5rem;">THANK YOU.</p>
     </main>
   </body>
 </html>
