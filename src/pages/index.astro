@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+
+const divisions = await getCollection('divisions');
+const projects = (await getCollection('projects')).slice(0, 3);
+const [home] = await getCollection('pages', ({ id }) => id === 'home.md');
+---
+
+<BaseLayout title="Techmach | Home" description={home.data.heroText}>
+  <HeroSection image={divisions[0].data.heroImage} title={home.data.heroHeadline ?? 'Engineering Solutions'} text={home.data.heroText} ctaHref="/contact" ctaText={home.data.ctaText ?? 'Contact Us'} />
+
+  <section class="mx-auto max-w-7xl px-6 py-16">
+    <div class="mb-8 flex items-end justify-between">
+      <h2 class="text-3xl font-semibold">Our Divisions</h2>
+    </div>
+    <div class="grid gap-6 md:grid-cols-2">
+      {divisions.map((division) => (
+        <a href={`/divisions/${division.data.slug}/`} class="rounded border border-slate-200 p-6 transition hover:border-accent hover:shadow-sm">
+          <h3 class="mb-3 text-xl font-semibold">{division.data.title}</h3>
+          <p class="text-slate-600">{division.data.summary}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-slate-100 py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-8 flex items-end justify-between">
+        <h2 class="text-3xl font-semibold">Featured Projects</h2>
+        <a href="/projects" class="text-sm font-semibold text-accent">View all projects →</a>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {projects.map((project) => (
+          <a href={`/projects/${project.data.slug}/`} class="rounded bg-white p-5 shadow-sm">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-accent">{project.data.location}</p>
+            <h3 class="mb-3 text-lg font-semibold">{project.data.title}</h3>
+            <p class="text-sm text-slate-600">{project.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-charcoal py-16 text-white">
+    <div class="mx-auto max-w-7xl px-6 text-center">
+      <h2 class="mb-4 text-3xl font-semibold">Ready to discuss your next project?</h2>
+      <a href="/contact" class="inline-block rounded border border-accent px-6 py-3 text-sm font-semibold uppercase tracking-wide text-accent hover:bg-accent hover:text-white">Contact Us</a>
+    </div>
+  </section>
+</BaseLayout>

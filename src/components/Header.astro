@@ -1,0 +1,17 @@
+---
+const links = [
+  { href: '/about', label: 'About' },
+  { href: '/partners', label: 'Partners' },
+  { href: '/team', label: 'Team' }
+];
+---
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-charcoal/85 backdrop-blur">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <a href="/" class="text-lg font-semibold tracking-wide text-white">TECHMACH</a>
+    <nav class="flex items-center gap-6 text-sm font-medium text-white/90">
+      {links.map((link) => <a href={link.href} class="hover:text-white">{link.label}</a>)}
+      <a href="/contact" class="rounded border border-accent px-4 py-2 text-accent hover:bg-accent hover:text-white">Contact</a>
+    </nav>
+  </div>
+</header>

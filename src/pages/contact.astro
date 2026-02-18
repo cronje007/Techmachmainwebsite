@@ -1,0 +1,17 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const contact = await getEntry('pages', 'contact.md');
+---
+
+<BaseLayout title="Techmach | Contact" description="Contact Techmach">
+  <section class="mx-auto max-w-3xl px-6 py-16">
+    <h1 class="mb-8 text-4xl font-bold">Contact</h1>
+    <div class="space-y-4 rounded border border-slate-200 p-8">
+      <p><span class="font-semibold">Email:</span> <a class="text-accent" href={`mailto:${contact?.data.contactEmail}`}>{contact?.data.contactEmail}</a></p>
+      <p><span class="font-semibold">Phone:</span> {contact?.data.contactPhone}</p>
+      <p><span class="font-semibold">Address:</span> {contact?.data.address}</p>
+    </div>
+  </section>
+</BaseLayout>

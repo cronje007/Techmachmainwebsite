@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({ params: { slug: project.data.slug }, props: { project } }));
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout title={`Techmach | ${project.data.title}`} description={project.data.excerpt}>
+  <section class="mx-auto max-w-7xl px-6 py-16">
+    <img src={project.data.featuredImage} alt={project.data.title} class="mb-8 h-[28rem] w-full rounded object-cover" loading="eager" />
+    <h1 class="mb-4 text-4xl font-bold">{project.data.title}</h1>
+    <div class="mb-8 grid gap-2 text-sm text-slate-600 md:grid-cols-3">
+      <p><span class="font-semibold text-slate-800">Division:</span> {project.data.division}</p>
+      <p><span class="font-semibold text-slate-800">Location:</span> {project.data.location}</p>
+      <p><span class="font-semibold text-slate-800">Date:</span> {project.data.date}</p>
+    </div>
+    <article class="prose prose-slate mb-12 max-w-none">
+      <Fragment set:html={project.body} />
+    </article>
+    <div class="grid gap-4 md:grid-cols-3">
+      {project.data.gallery.map((image, index) => (
+        <img src={image} alt={`${project.data.title} gallery ${index + 1}`} class="h-52 w-full rounded object-cover" loading="lazy" />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
