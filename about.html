@@ -3,77 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Techmach Technology | About</title>
-    <meta name="description" content="About Techmach Technology and our engineering capabilities." />
+    <title>Techmach | About</title>
+    <meta
+      name="description"
+      content="Techmach is currently undergoing a transformation. Contact us for any enquiries."
+    />
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Courier New", Courier, monospace;
+        color: #9dadbd;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.86)),
+          url("assets/img/silocomplex.jpg") center / cover no-repeat;
+      }
+
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
+      }
+
+      .brand {
+        width: 100%;
+        max-width: 780px;
+        margin-bottom: 2.5rem;
+      }
+
+      .dash {
+        font-size: 2rem;
+        line-height: 1;
+        margin: 0 0 1.2rem;
+      }
+
+      p {
+        margin: 0 0 1.3rem;
+        font-size: clamp(1rem, 2vw, 1.05rem);
+        letter-spacing: 0.04em;
+        line-height: 1.6;
+      }
+
+      .stacked {
+        margin-bottom: 2rem;
+      }
+
+      .stacked span {
+        display: block;
+        margin-bottom: 0.8rem;
+      }
+
+      a {
+        color: #aebfd0;
+      }
+    </style>
   </head>
-  <body data-page="about">
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a href="index.html" class="logo">
-          <img src="assets/img/techmachlogo.png" alt="Techmach logo" class="logo-img" onerror="this.style.display='none'" />
-          <span>Techmach Technology</span>
-        </a>
-        <nav class="site-nav" aria-label="Main navigation">
-          <a href="index.html" data-page="home">Home</a>
-          <a href="about.html" data-page="about">About</a>
-          <a href="contact.html" data-page="contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+  <body>
+    <main class="page">
+      <img src="assets/img/techmachlogo.png" alt="Techmach" class="brand" />
 
-    <main>
-      <section class="hero">
-        <div class="container hero-content">
-          <p class="eyebrow">About Techmach</p>
-          <h1>A trusted engineering partner for agri-processing growth.</h1>
-          <p class="tagline">
-            Our team combines practical field knowledge with disciplined project delivery to support
-            reliable plant performance over the long term.
-          </p>
-        </div>
-      </section>
+      <p class="dash">-</p>
+      <p class="stacked">
+        <span>TRANSFORMING</span>
+        <span>TECHNOLOGY</span>
+        <span>FOR SOUTH AFRICA</span>
+      </p>
+      <p class="dash">-</p>
 
-      <section class="section surface reveal">
-        <div class="container grid grid-3">
-          <article class="card">
-            <h3>Our Focus</h3>
-            <p>Cereal milling, animal feed milling, seed processing, and related engineering fields.</p>
-          </article>
-          <article class="card">
-            <h3>Our Services</h3>
-            <p>Machinery and components, project design, turnkey projects, and implementation support.</p>
-          </article>
-          <article class="card">
-            <h3>Our Vision</h3>
-            <p>To become Africa’s leading engineering company in this specialist sector.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section reveal">
-        <div class="container">
-          <h2 class="section-title">Company Overview</h2>
-          <p class="section-intro">
-            Techmach is a general engineering company in the agri sector, with over 30 years of
-            experience. The company provides high-quality products and services to the food industry,
-            including machinery and components, turnkey projects, and project design. Supported by
-            energetic management, skilled personnel, and investment in productive equipment, Techmach
-            continues to strengthen its design and manufacturing facilities to align with world-class
-            standards of quality and productivity.
-          </p>
-        </div>
-      </section>
+      <p>WELCOME TO TECHMACH.</p>
+      <p>
+        WE ARE CURRENTLY UNDERGOING A TRANSFORMATION AND APPRECIATE YOUR PATIENCE.
+      </p>
+      <p>
+        FOR ANY ENQUIRIES, PLEASE CONTACT +27 11 762-1091 OR
+        <a href="mailto:juan-paul@techmach.co.za">juan-paul@techmach.co.za</a>.
+      </p>
+      <p>THANK YOU.</p>
     </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        Techmach Technology &copy; <span id="year">2026</span> ·
-        <a href="mailto:Warren@techmach.co.za">Warren@techmach.co.za</a> · 011 762 1091
-      </div>
-    </footer>
-
-    <script src="assets/js/main.js"></script>
   </body>
 </html>

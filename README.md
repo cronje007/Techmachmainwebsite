@@ -3,9 +3,9 @@
 A static website for Techmach Technology built with plain HTML, CSS, and lightweight JavaScript.
 
 ## Pages
-- `index.html` — Home
-- `about.html` — About
-- `contact.html` — Contact
+- `about.html` — Current holding/about page
+- `index.html` — Redirects to `about.html`
+- `contact.html` — Redirects to `about.html`
 
 ## Design Direction
 - Dark-blue client-facing interface with lighter blue accents
