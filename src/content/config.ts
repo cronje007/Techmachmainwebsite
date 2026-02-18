@@ -21,7 +21,7 @@ const projects = defineCollection({
       slug: z.string().optional(),
       division: z.string(),
       location: z.string(),
-      date: z.string(),
+      date: z.union([z.string(), z.date()]),
       featuredImage: z.string(),
       gallery: z.array(z.string()),
       excerpt: z.string()

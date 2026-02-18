@@ -11,6 +11,14 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+const formattedDate =
+  project.data.date instanceof Date
+    ? project.data.date.toLocaleDateString('en-GB', {
+        year: 'numeric',
+        month: 'short',
+        day: '2-digit'
+      })
+    : project.data.date;
 ---
 
 <BaseLayout title={`Techmach | ${project.data.title}`} description={project.data.excerpt}>
@@ -20,7 +28,7 @@ const { project } = Astro.props;
     <div class="mb-8 grid gap-2 text-sm text-slate-600 md:grid-cols-3">
       <p><span class="font-semibold text-slate-800">Division:</span> {project.data.division}</p>
       <p><span class="font-semibold text-slate-800">Location:</span> {project.data.location}</p>
-      <p><span class="font-semibold text-slate-800">Date:</span> {project.data.date}</p>
+      <p><span class="font-semibold text-slate-800">Date:</span> {formattedDate}</p>
     </div>
     <article class="prose prose-slate mb-12 max-w-none">
       <Fragment set:html={project.body} />
