@@ -1,0 +1,25 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Contact | Techmach">
+  <section class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <div>
+      <h1 class="text-4xl font-black">Contact Us</h1>
+      <p class="mt-4 text-gray-600">Tell us about your plant, upgrade, or maintenance requirement.</p>
+      <form class="mt-8 space-y-4">
+        <input type="text" placeholder="Name" class="w-full rounded-md border border-gray-300 px-4 py-3" />
+        <input type="email" placeholder="Email" class="w-full rounded-md border border-gray-300 px-4 py-3" />
+        <input type="text" placeholder="Company" class="w-full rounded-md border border-gray-300 px-4 py-3" />
+        <textarea rows="5" placeholder="Message" class="w-full rounded-md border border-gray-300 px-4 py-3"></textarea>
+        <button type="submit" class="rounded-md bg-accent px-6 py-3 font-semibold text-white">Send Message</button>
+      </form>
+    </div>
+    <div class="rounded-xl bg-gray-50 p-8">
+      <h2 class="text-2xl font-bold">Techmach</h2>
+      <p class="mt-4 text-gray-700">Phone: +27 (0)11 000 0000</p>
+      <p class="text-gray-700">Email: info@techmach.co.za</p>
+      <p class="mt-4 text-gray-700">123 Industrial Drive, Johannesburg, South Africa</p>
+    </div>
+  </section>
+</MainLayout>

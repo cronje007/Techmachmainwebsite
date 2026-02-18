@@ -1,0 +1,40 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Gallery from './Gallery.astro';
+
+interface Props {
+  title: string;
+  summary: string;
+  hero: string;
+  services: string[];
+  gallery: { src: string; alt: string }[];
+}
+
+const { title, summary, hero, services, gallery } = Astro.props;
+---
+
+<MainLayout title={`${title} | Techmach`}>
+  <section class="relative min-h-[45vh]">
+    <img src={hero} alt={title} class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative mx-auto flex min-h-[45vh] max-w-7xl items-end px-4 py-10 text-white sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-black">{title}</h1>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <p class="max-w-4xl text-lg text-gray-700">{summary}</p>
+
+    <h2 class="mt-10 text-2xl font-extrabold">Services</h2>
+    <ul class="mt-4 list-inside list-disc space-y-2 text-gray-700">
+      {services.map((service) => <li>{service}</li>)}
+    </ul>
+
+    <h2 class="mt-10 text-2xl font-extrabold">Gallery</h2>
+    <div class="mt-5">
+      <Gallery images={gallery} />
+    </div>
+
+    <a href="/" class="mt-10 inline-flex font-semibold text-accent hover:text-charcoal">← Back to Home</a>
+  </section>
+</MainLayout>
